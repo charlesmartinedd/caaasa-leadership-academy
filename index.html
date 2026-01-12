@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAAASA Leadership Academy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a365d;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .pdf-container {
+            width: 100%;
+            max-width: 900px;
+            height: 85vh;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        embed {
+            width: 100%;
+            height: 100%;
+        }
+        .download-link {
+            margin-top: 20px;
+            color: #d69e2e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAAASA Leadership Academy</h1>
+    <div class="pdf-container">
+        <embed src="CAAASA-Leadership-Academy-OnePager.pdf" type="application/pdf">
+    </div>
+    <a href="CAAASA-Leadership-Academy-OnePager.pdf" download class="download-link">Download PDF</a>
+</body>
+</html>
