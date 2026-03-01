@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAAASA Video Production Script — Review</title>
+<style>
+  :root { --navy: #1a2744; --gold: #c9a84c; --blue: #2997ff; --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.4rem; color: var(--blue); margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+  h3 { font-size: 1.1rem; color: var(--gold); margin: 1rem 0 0.5rem; }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; }
+  .badge-veo { background: #1a3a2a; color: #3fb950; }
+  .badge-el { background: #2a1a3a; color: #a371f7; }
+  .badge-jam { background: #3a2a1a; color: #d29922; }
+  .badge-remotion { background: #1a2a3a; color: #58a6ff; }
+  .cost-box { background: var(--card); border: 1px solid var(--gold); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+  .cost-row { display: flex; justify-content: space-between; padding: 4px 0; }
+  .cost-total { border-top: 2px solid var(--gold); margin-top: 8px; padding-top: 8px; font-weight: 700; font-size: 1.1rem; color: var(--gold); }
+  .scene { background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin: 1rem 0; overflow: hidden; }
+  .scene-header { background: var(--navy); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .scene-header h3 { margin: 0; color: #fff; }
+  .scene-time { color: var(--gold); font-size: 0.85rem; font-weight: 600; }
+  .scene-body { padding: 1.5rem; }
+  .narration { background: #0d1117; border-left: 3px solid var(--blue); padding: 1rem 1.25rem; margin: 0.75rem 0; border-radius: 0 6px 6px 0; font-style: italic; color: #c9d1d9; }
+  .narration-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); font-style: normal; margin-bottom: 4px; }
+  .clip { background: #0d1117; border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; margin: 0.5rem 0; }
+  .clip-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .clip-id { font-weight: 700; color: var(--gold); font-size: 0.9rem; }
+  .clip-dur { font-size: 0.8rem; color: var(--muted); background: #21262d; padding: 2px 8px; border-radius: 10px; }
+  .clip-prompt { color: #c9d1d9; font-size: 0.9rem; }
+  .clip-prompt .style { color: var(--muted); font-size: 0.8rem; }
+  .overlay-list { list-style: none; padding: 0; }
+  .overlay-list li { padding: 4px 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; }
+  .overlay-list li::before { content: "▸"; position: absolute; left: 0; color: var(--gold); }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  th { color: var(--gold); font-weight: 600; }
+  .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+  .pipe-step { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center; }
+  .pipe-step .num { font-size: 2rem; font-weight: 700; color: var(--gold); }
+  .pipe-step .label { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .pipe-step .detail { font-size: 0.8rem; color: var(--text); margin-top: 6px; }
+  .approve-section { background: #1a3a2a; border: 2px solid #3fb950; border-radius: 8px; padding: 2rem; margin: 2rem 0; text-align: center; }
+  .approve-section h2 { color: #3fb950; border: none; margin: 0 0 0.5rem; }
+  .music-info { display: flex; gap: 1.5rem; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+  .music-icon { font-size: 2rem; }
+  .voice-info { display: flex; gap: 1.5rem; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>CAAASA Aspiring District Office Administrator's Academy</h1>
+<p class="subtitle">Video Production Script — Review & Approval Document<br>
+Generated: March 1, 2026 &nbsp;|&nbsp; Duration Target: 90–125 seconds &nbsp;|&nbsp; 26 video clips &nbsp;|&nbsp; 7 narration segments</p>
+
+<!-- PIPELINE -->
+<h2>Production Pipeline</h2>
+<div class="pipeline">
+  <div class="pipe-step">
+    <div class="num">1</div>
+    <div class="label"><span class="badge badge-el">ElevenLabs</span></div>
+    <div class="detail">7 narration segments<br>Superintendent voice</div>
+  </div>
+  <div class="pipe-step">
+    <div class="num">2</div>
+    <div class="label"><span class="badge badge-veo">Sora 2</span></div>
+    <div class="detail">26 video clips<br>OpenAI API</div>
+  </div>
+  <div class="pipe-step">
+    <div class="num">3</div>
+    <div class="label"><span class="badge badge-jam">Jamendo</span></div>
+    <div class="detail">Background music<br>"Spirit of Success"</div>
+  </div>
+  <div class="pipe-step">
+    <div class="num">4</div>
+    <div class="label"><span class="badge badge-remotion">Remotion</span></div>
+    <div class="detail">Final assembly<br>1080p MP4</div>
+  </div>
+</div>
+
+<!-- COST -->
+<h2>Cost Estimate</h2>
+<div class="cost-box">
+  <div class="cost-row"><span>Sora 2 (720p) — 26 clips, ~104 seconds @ $0.10/sec</span><span>$10.40</span></div>
+  <div class="cost-row"><span>ElevenLabs — 7 scenes, ~4,200 characters</span><span>~$1.26</span></div>
+  <div class="cost-row"><span>Jamendo — "Spirit of Success" (free w/ attribution)</span><span>$0.00</span></div>
+  <div class="cost-row cost-total"><span>TOTAL ESTIMATE</span><span>~$11.66</span></div>
+  <div class="cost-row" style="color:#3fb950"><span>Budget: $20.00 — Remaining after production</span><span>~$8.34</span></div>
+</div>
+
+<!-- VOICE -->
+<h2>Voice & Music</h2>
+<div class="voice-info">
+  <div style="font-size:2rem">🎙</div>
+  <div>
+    <strong>Superintendent Male Voice</strong> (Morgan Freeman inspired)<br>
+    <span style="color:var(--muted)">ElevenLabs ID: HkA22KiGe8DgUA6JGVbq &nbsp;|&nbsp; Model: eleven_multilingual_v2</span><br>
+    <span style="color:var(--muted)">Settings: Stability 0.65 &nbsp;|&nbsp; Similarity 0.80 &nbsp;|&nbsp; Style 0.30</span><br>
+    <span style="color:#3fb950">✓ Test audio generated successfully (363KB)</span>
+  </div>
+</div>
+<div class="music-info">
+  <div class="music-icon">🎵</div>
+  <div>
+    <strong>Spirit of Success</strong> by Alumo<br>
+    <span style="color:var(--muted)">Jamendo ID: 1284462 &nbsp;|&nbsp; Duration: 166s &nbsp;|&nbsp; Genre: Corporate, Electronic &nbsp;|&nbsp; Tags: Upbeat, Inspirational, Presentations</span><br>
+    <span style="color:var(--muted)">Volume: 15% under narration, 40% in transitions</span><br>
+    <span style="color:#3fb950">✓ Downloaded successfully (4.5MB)</span>
+  </div>
+</div>
+
+<!-- STYLE BIBLE -->
+<h2>Visual Style Bible</h2>
+<div class="narration">
+  <div class="narration-label">Appended to every Veo 3.1 prompt</div>
+  Cinematic 4K, warm golden-hour lighting, shallow depth of field, anamorphic lens flare, professional corporate documentary style, African-American male and female adult leaders as protagonists, diverse students in background, muted navy and gold color grade, steady dolly or gimbal movement, 24fps film grain
+</div>
+
+<!-- SCENES -->
+<h2>Scene-by-Scene Breakdown</h2>
+
+<!-- SCENE 1 -->
+<div class="scene">
+  <div class="scene-header">
+    <h3>SCENE 1: OPENING</h3>
+    <span class="scene-time">0:00 – 0:15 (15s)</span>
+  </div>
+  <div class="scene-body">
+    <div class="narration">
+      <div class="narration-label">Narration — scene1.mp3</div>
+      "You've transformed your school. You've built a culture of excellence. You've proven you can lead a building. But late at night, when you're reviewing your school improvement plan, you know the real barriers to student success aren't just happening on your campus; they're systemic. And you're ready to solve them at the district level."
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 1A</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">An African-American male school principal in a navy suit walks through a modern school campus at golden sunrise, greeting students with a warm smile. Students wave back. Camera follows from behind in a slow tracking shot.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 1B</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">Quick montage: An African-American woman principal leads a faculty meeting in a bright conference room, gestures toward a whiteboard with data charts. Cut to: coaching a teacher in a classroom doorway. Professional, warm lighting.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 1C</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">An African-American male administrator sits at the far end of a large district boardroom table, observing other leaders discussing strategy. He takes notes. Camera slowly pushes in on his thoughtful expression.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 1D</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">Close-up of an African-American male school leader standing outside, looking toward a modern glass district office building in the distance. Wind gently moves his tie. Lens flare from the setting sun. Aspirational, contemplative mood.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 2 -->
+<div class="scene">
+  <div class="scene-header">
+    <h3>SCENE 2: WHO IT'S FOR</h3>
+    <span class="scene-time">0:15 – 0:30 (15s)</span>
+  </div>
+  <div class="scene-body">
+    <div class="narration">
+      <div class="narration-label">Narration — scene2.mp3</div>
+      "CAAASA's Aspiring District Office Administrator's Academy is designed for you, principals, assistant principals, and site coordinators who've mastered building-level leadership and are ready to scale your impact across an entire district. You've proven yourself at the site. Now it's time to position yourself for Director of Curriculum, Director of Student Services, Executive Director roles, Assistant Superintendent, or other district cabinet positions. This is your pathway from managing one school to transforming many."
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 2A</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">An African-American woman elementary school principal walks confidently through a colorful elementary school hallway, tablet in hand, smiling at students' artwork on the walls. Slow dolly forward.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 2B</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">An African-American male high school assistant principal stands at a command center with multiple monitors showing schedules and data. He coordinates with staff on a walkie-talkie. Dynamic, competent energy.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 2C</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">An African-American woman middle school principal presents a data slideshow to a small group of district leaders in a modern conference room. She gestures confidently at rising achievement graphs. Professional lighting.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 2D</span><span class="clip-dur">5 sec</span></div>
+      <div class="clip-prompt">A diverse group of African-American site administrators, men and women of various ages, stand together in a modern school lobby, arms crossed confidently, looking directly at camera. Slow push-in. Powerful, unified.</div>
+    </div>
+    <h3>Text Overlays</h3>
+    <ul class="overlay-list">
+      <li>"Building Principals" — fades in at 0:16, 3s</li>
+      <li>"Assistant Principals" — fades in at 0:19, 3s</li>
+      <li>"Deans & Coordinators" — fades in at 0:22, 3s</li>
+      <li>"Site Leaders Ready for District Impact" — fades in at 0:25, 5s</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SCENE 3 -->
+<div class="scene">
+  <div class="scene-header">
+    <h3>SCENE 3: WHY IT EXISTS</h3>
+    <span class="scene-time">0:30 – 0:50 (20s)</span>
+  </div>
+  <div class="scene-body">
+    <div class="narration">
+      <div class="narration-label">Narration — scene3.mp3</div>
+      "Because running an excellent school doesn't automatically prepare you for district-level leadership. The leap from site to district office requires a fundamentally different skill set, systems thinking instead of building management, policy instead of procedures, district-wide strategy instead of campus culture. The Academy exists to accelerate that transition. We give you the frameworks, the competencies, and the network, to compete for district positions and excel in them from day one."
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 3A</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">An African-American male principal sits at his desk late at night, reading a district-level job description on his laptop screen. His expression shows determination mixed with uncertainty. Desk lamp warm glow.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 3B</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">Split-screen visual concept: left side shows a principal managing one school building, right side shows a complex web of interconnected schools, departments, and systems. Transition from simple to complex. Abstract, clean.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 3C</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">An interview panel of three superintendents and board members sits behind a long table, reviewing candidate folders. Professional boardroom setting. Shot from the candidate's perspective approaching the table.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 3D</span><span class="clip-dur">5 sec</span></div>
+      <div class="clip-prompt">A cohort of 12 African-American site administrators engaged in a workshop, working on district-level case studies at round tables. A senior district leader facilitates. Energetic, collaborative atmosphere. Overhead angle transitioning to eye level.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 3E</span><span class="clip-dur">5 sec</span></div>
+      <div class="clip-prompt">An African-American woman administrator stands at a large whiteboard covered in systems maps and flowcharts. She steps back, seeing the full picture, and nods with growing confidence. Camera pulls back to reveal the scope of her thinking.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 4 -->
+<div class="scene">
+  <div class="scene-header">
+    <h3>SCENE 4: WHAT DOORS IT OPENS</h3>
+    <span class="scene-time">0:50 – 1:20 (30s)</span>
+  </div>
+  <div class="scene-body">
+    <div class="narration">
+      <div class="narration-label">Narration — scene4.mp3</div>
+      "The Academy opens every door to district-level leadership. You'll master: Systems-level thinking, how to analyze and improve performance across multiple schools, not just one building. District finance and resource allocation, understanding multi-million dollar budgets, collective bargaining, and strategic investments. Policy development and governance, working effectively with boards, unions, and community stakeholders at scale. Leading leaders, coaching and supervising principals while building high-performing district teams. Data-driven district strategy. And the competitive positioning that makes superintendents and boards see you not just as a great principal, but as their next cabinet member. Our graduates aren't just applying for district roles, they're being recruited for them."
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 4A</span><span class="clip-dur">5 sec</span></div>
+      <div class="clip-prompt">An African-American woman presents confidently to a school board in a formal boardroom. Board members nod approvingly. Large screen behind her shows a district strategic plan. Wide shot with shallow depth of field.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 4B</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">An African-American male district leader leads a cabinet meeting at a large oval table. The superintendent sits at the head. He gestures toward a projected district-wide achievement dashboard. Authoritative, respected.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 4C</span><span class="clip-dur">5 sec</span></div>
+      <div class="clip-prompt">Close-up of hands working on a complex district budget spreadsheet on a large monitor, then pulling back to reveal an African-American male executive director analyzing multi-million dollar resource allocation across schools.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 4D</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">An African-American woman Director of Student Services coaches a group of principals in a professional development session. She uses a large touchscreen showing equity data across multiple school sites.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 4E</span><span class="clip-dur">5 sec</span></div>
+      <div class="clip-prompt">An African-American male candidate sits confidently in a district-level interview, leaning forward with composed body language. Three interviewers across the table smile and take notes. Professional, warm.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 4F</span><span class="clip-dur">5 sec</span></div>
+      <div class="clip-prompt">The same candidate from the interview is now in a corner office with a nameplate reading Executive Director. He places a family photo on his new desk and looks out the window at the district below. Triumphant, earned moment.</div>
+    </div>
+    <h3>Text Overlays (Door Open Wipe)</h3>
+    <ul class="overlay-list">
+      <li>"Assistant Superintendent" — 0:52, 4s</li>
+      <li>"Executive Director Roles" — 0:56, 4s</li>
+      <li>"Director of Curriculum/Instruction" — 1:00, 4s</li>
+      <li>"Director of Student Services" — 1:04, 4s</li>
+      <li>"Chief Academic Officer" — 1:08, 4s</li>
+      <li>"District-Wide Impact" — 1:12, 4s</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SCENE 6 -->
+<div class="scene">
+  <div class="scene-header">
+    <h3>SCENE 6: THE CAAASA DISTRICT LEADERSHIP ADVANTAGE</h3>
+    <span class="scene-time">1:45 – 1:55 (10s)</span>
+  </div>
+  <div class="scene-body">
+    <div class="narration">
+      <div class="narration-label">Narration — scene6.mp3</div>
+      "This is the CAAASA advantage. We've been developing African-American educational leaders for district impact for over 10 years. Our alumni hold cabinet positions in districts across the state, and they started exactly where you are now. You'll learn from sitting superintendents, assistant superintendents, and executive directors who understand both the opportunities and obstacles you'll face. Our network doesn't just prepare you, it connects you to the opportunities that can transform your career."
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 6A</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">A cohort of African-American site administrators work intensely on a district-level simulation exercise at a U-shaped conference table. Whiteboards filled with strategy maps surround them. Focused, elite atmosphere.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 6B</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">One-on-one mentoring: A senior African-American district superintendent mentors a younger site administrator in a quiet office. They review a career development plan together. Warm, personal, intergenerational.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 6C</span><span class="clip-dur">2 sec</span></div>
+      <div class="clip-prompt">A group of administrators tour a district office, walking through corridors past department doors labeled Curriculum and Instruction, Human Resources, Business Services. They observe and take notes. Tracking shot.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 6D</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">A cohort celebrates as one member holds up a letter, a district office job offer. Group hugs, applause, genuine emotion. Joyful, authentic, triumphant.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 7 -->
+<div class="scene">
+  <div class="scene-header">
+    <h3>SCENE 7: CALL TO ACTION</h3>
+    <span class="scene-time">1:55 – 2:05 (10s)</span>
+  </div>
+  <div class="scene-body">
+    <div class="narration">
+      <div class="narration-label">Narration — scene7.mp3</div>
+      "You've proven you can lead a school. Now prove you can transform a district. Join CAAASA's Aspiring District Office Administrators' Academy. Master the systems. Learn the tools. Secure the position. Your district is waiting for leaders like you, leaders who combine site-level credibility with district-level vision."
+    </div>
+    <div class="narration" style="border-left-color: var(--gold);">
+      <div class="narration-label" style="color:var(--gold);">Final Voice — scene7_final.mp3</div>
+      "From principal to cabinet. From campus to district. Your impact multiplies here."
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 7A</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">An African-American male administrator is ceremonially welcomed into a district cabinet meeting. He takes his seat at the table for the first time. Other cabinet members shake his hand. Dignified, milestone moment.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 7B</span><span class="clip-dur">4 sec</span></div>
+      <div class="clip-prompt">A cohort of 15 diverse African-American site leaders stands together on the steps of a modern educational building, confident and ready. Slow-motion push-in. Golden hour backlighting. Iconic group shot.</div>
+    </div>
+    <div class="clip">
+      <div class="clip-header"><span class="clip-id">Clip 7C</span><span class="clip-dur">3 sec</span></div>
+      <div class="clip-prompt">The new district administrator contributes an idea at the cabinet table. His laptop shows an AI-powered analytics dashboard. The superintendent nods. He has arrived. Camera slowly pulls back through the boardroom window. Closing shot.</div>
+    </div>
+    <h3>Final Card — Text Overlays</h3>
+    <ul class="overlay-list">
+      <li>"CAAASA Aspiring District Office Administrator's Academy"</li>
+      <li>"For Site Leaders Ready for District Impact"</li>
+      <li>"Applications Open Now"</li>
+      <li>"Visit: www.CAAASA.org/leadershipacademy"</li>
+      <li>"(818) 217-6310"</li>
+      <li>"#FromSiteToDistrict &nbsp; #DistrictLeadership &nbsp; #CAAASA"</li>
+    </ul>
+    <p style="color:var(--muted); font-size:0.85rem; margin-top:0.75rem;">CAAASA logo overlay appears on final card (top right, 85% opacity)</p>
+  </div>
+</div>
+
+<!-- SUMMARY TABLE -->
+<h2>Clip Summary</h2>
+<table>
+  <thead>
+    <tr><th>Clip</th><th>Scene</th><th>Duration</th><th>Prompt Preview</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1A</td><td>Opening</td><td>4s</td><td>Principal walks campus at sunrise...</td></tr>
+    <tr><td>1B</td><td>Opening</td><td>3s</td><td>Faculty meeting montage...</td></tr>
+    <tr><td>1C</td><td>Opening</td><td>4s</td><td>Boardroom observation...</td></tr>
+    <tr><td>1D</td><td>Opening</td><td>4s</td><td>Looking toward district office...</td></tr>
+    <tr><td>2A</td><td>Who It's For</td><td>3s</td><td>Elementary principal in hallway...</td></tr>
+    <tr><td>2B</td><td>Who It's For</td><td>3s</td><td>AP at command center...</td></tr>
+    <tr><td>2C</td><td>Who It's For</td><td>4s</td><td>Data presentation to leaders...</td></tr>
+    <tr><td>2D</td><td>Who It's For</td><td>5s</td><td>Group shot, arms crossed...</td></tr>
+    <tr><td>3A</td><td>Why It Exists</td><td>3s</td><td>Late night job description...</td></tr>
+    <tr><td>3B</td><td>Why It Exists</td><td>4s</td><td>Split-screen school vs district...</td></tr>
+    <tr><td>3C</td><td>Why It Exists</td><td>3s</td><td>Interview panel...</td></tr>
+    <tr><td>3D</td><td>Why It Exists</td><td>5s</td><td>Cohort workshop, case studies...</td></tr>
+    <tr><td>3E</td><td>Why It Exists</td><td>5s</td><td>Whiteboard systems mapping...</td></tr>
+    <tr><td>4A</td><td>Doors It Opens</td><td>5s</td><td>Board presentation...</td></tr>
+    <tr><td>4B</td><td>Doors It Opens</td><td>4s</td><td>Cabinet meeting leadership...</td></tr>
+    <tr><td>4C</td><td>Doors It Opens</td><td>5s</td><td>Budget analysis pullback...</td></tr>
+    <tr><td>4D</td><td>Doors It Opens</td><td>4s</td><td>PD session with equity data...</td></tr>
+    <tr><td>4E</td><td>Doors It Opens</td><td>5s</td><td>District interview confidence...</td></tr>
+    <tr><td>4F</td><td>Doors It Opens</td><td>5s</td><td>New corner office, earned moment...</td></tr>
+    <tr><td>6A</td><td>CAAASA Advantage</td><td>3s</td><td>Simulation exercise at U-table...</td></tr>
+    <tr><td>6B</td><td>CAAASA Advantage</td><td>3s</td><td>One-on-one mentoring...</td></tr>
+    <tr><td>6C</td><td>CAAASA Advantage</td><td>2s</td><td>District office tour...</td></tr>
+    <tr><td>6D</td><td>CAAASA Advantage</td><td>3s</td><td>Celebration, job offer...</td></tr>
+    <tr><td>7A</td><td>Call to Action</td><td>3s</td><td>Cabinet welcome ceremony...</td></tr>
+    <tr><td>7B</td><td>Call to Action</td><td>4s</td><td>Cohort group shot, golden hour...</td></tr>
+    <tr><td>7C</td><td>Call to Action</td><td>3s</td><td>Cabinet contribution, closing...</td></tr>
+  </tbody>
+</table>
+<p style="color:var(--muted); text-align:right; font-size:0.85rem;">Total: 26 clips &nbsp;|&nbsp; 104 seconds of generated video</p>
+
+<!-- APPROVAL -->
+<div class="approve-section">
+  <h2>Ready for Approval</h2>
+  <p>Review the scenes, prompts, narration text, and cost estimate above.<br>
+  Once Gemini API billing is enabled, run: <code style="background:#0d1117;padding:4px 8px;border-radius:4px;">python production_script.py</code></p>
+  <p style="color:var(--muted); margin-top:1rem; font-size:0.85rem;">
+    Script: 01_Projects/Personal--CAAASA-Video/production_script.py<br>
+    This review: 01_Projects/Personal--CAAASA-Video/production_review.html
+  </p>
+</div>
+
+</div>
+</body>
+</html>

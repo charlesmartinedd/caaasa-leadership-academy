@@ -8,90 +8,408 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #1a365d;
+            background: #0d1117;
+            color: #e6edf3;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 20px;
         }
-        h1 { color: #fff; font-size: 2rem; margin-bottom: 6px; text-align: center; }
-        .subtitle { color: #c9a227; font-size: 1.1rem; margin-bottom: 30px; text-align: center; font-style: italic; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; width: 100%; max-width: 960px; margin-bottom: 30px; }
+        a { color: #c9a227; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Hero */
+        .hero {
+            background: #1a365d;
+            padding: 60px 20px 50px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.6rem; color: #fff; margin-bottom: 8px; }
+        .hero .subtitle { color: #c9a227; font-size: 1.2rem; font-style: italic; margin-bottom: 6px; }
+        .hero .org { color: #a0aec0; font-size: 0.95rem; }
+        .gold-line { width: 80px; height: 3px; background: #c9a227; margin: 16px auto 0; }
+
+        /* Nav */
+        nav { background: #161b22; border-bottom: 1px solid #30363d; padding: 12px 20px; text-align: center; position: sticky; top: 0; z-index: 10; }
+        nav a { color: #e6edf3; margin: 0 16px; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: #c9a227; text-decoration: none; }
+
+        /* Sections */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 50px 0; }
+        section h2 { font-size: 1.6rem; color: #c9a227; margin-bottom: 8px; }
+        section .section-desc { color: #8b949e; font-size: 0.95rem; margin-bottom: 24px; }
+        .divider { width: 100%; height: 1px; background: #30363d; }
+
+        /* Cards grid */
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .card {
-            background: #243b5c;
+            background: #161b22;
+            border: 1px solid #30363d;
             border-radius: 10px;
             padding: 24px 20px;
-            text-align: center;
-            border: 2px solid transparent;
             transition: border-color 0.2s, transform 0.2s;
         }
         .card:hover { border-color: #c9a227; transform: translateY(-2px); }
-        .card-icon { font-size: 2.4rem; margin-bottom: 10px; }
+        .card-icon { font-size: 2rem; margin-bottom: 10px; }
         .card h3 { color: #fff; font-size: 1rem; margin-bottom: 6px; }
-        .card p { color: #a0aec0; font-size: 0.85rem; margin-bottom: 16px; line-height: 1.4; }
-        .card a {
+        .card p { color: #8b949e; font-size: 0.85rem; margin-bottom: 16px; line-height: 1.5; }
+        .card .btn {
             display: inline-block;
             background: #c9a227;
             color: #1a365d;
-            text-decoration: none;
             font-weight: bold;
             font-size: 0.85rem;
             padding: 8px 20px;
             border-radius: 6px;
             transition: background 0.2s;
         }
-        .card a:hover { background: #e0b82e; }
-        .pdf-container {
-            width: 100%;
-            max-width: 900px;
-            height: 70vh;
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        .card .btn:hover { background: #e0b82e; text-decoration: none; }
+        .card .btn-outline {
+            background: transparent;
+            border: 1px solid #c9a227;
+            color: #c9a227;
         }
-        embed { width: 100%; height: 100%; }
-        .footer { color: #a0aec0; font-size: 0.8rem; margin-top: 24px; text-align: center; }
-        .footer a { color: #c9a227; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
+        .card .btn-outline:hover { background: #c9a227; color: #1a365d; }
+
+        /* Audio player */
+        .audio-section { margin-top: 12px; }
+        .audio-section audio { width: 100%; height: 36px; }
+        .audio-label { font-size: 0.75rem; color: #8b949e; margin-bottom: 4px; }
+
+        /* Video player */
+        .video-section video { width: 100%; border-radius: 8px; margin-top: 12px; }
+
+        /* Workshop flow table */
+        .flow-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        .flow-table th { text-align: left; padding: 10px 12px; background: #1a365d; color: #c9a227; font-size: 0.85rem; }
+        .flow-table td { padding: 8px 12px; border-bottom: 1px solid #30363d; font-size: 0.85rem; color: #e6edf3; }
+        .flow-table tr:hover td { background: #161b22; }
+
+        /* Script scenes */
+        .scene { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+        .scene-header { background: #1a365d; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+        .scene-header h3 { color: #fff; font-size: 0.95rem; margin: 0; }
+        .scene-time { color: #c9a227; font-size: 0.8rem; font-weight: 600; }
+        .scene-body { padding: 16px; }
+        .narration { background: #0d1117; border-left: 3px solid #2997ff; padding: 12px 16px; border-radius: 0 6px 6px 0; font-style: italic; color: #c9d1d9; font-size: 0.9rem; margin-top: 8px; line-height: 1.6; }
+        .narration-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #2997ff; font-style: normal; margin-bottom: 4px; }
+        .visual-desc { color: #8b949e; font-size: 0.85rem; margin-top: 8px; line-height: 1.5; }
+        .visual-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #c9a227; margin-bottom: 4px; }
+
+        /* Footer */
+        footer { background: #161b22; border-top: 1px solid #30363d; padding: 30px 20px; text-align: center; }
+        footer p { color: #8b949e; font-size: 0.85rem; }
+        footer a { color: #c9a227; }
+
+        /* Badges */
+        .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; margin-right: 4px; }
+        .badge-sora { background: #1a3a2a; color: #3fb950; }
+        .badge-el { background: #2a1a3a; color: #a371f7; }
+        .badge-jam { background: #3a2a1a; color: #d29922; }
+
+        /* Representation callout */
+        .callout { background: #1a3a2a; border: 1px solid #3fb950; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+        .callout h4 { color: #3fb950; font-size: 0.9rem; margin-bottom: 4px; }
+        .callout p { color: #c9d1d9; font-size: 0.85rem; }
     </style>
 </head>
 <body>
-    <h1>CAAASA Leadership Academy</h1>
-    <p class="subtitle">AI Creator Lab — Where Creativity Meets AI</p>
 
+<!-- Hero -->
+<div class="hero">
+    <h1>CAAASA Leadership Academy</h1>
+    <p class="subtitle">AI Creator Lab &mdash; Where Creativity Meets AI</p>
+    <p class="org">California Association of African-American Superintendents and Administrators &times; TRPEC</p>
+    <div class="gold-line"></div>
+</div>
+
+<!-- Nav -->
+<nav>
+    <a href="#workshop">Workshop Materials</a>
+    <a href="#flow">Workshop Flow</a>
+    <a href="#video">Video Production</a>
+    <a href="#script">Full Script</a>
+    <a href="#samples">Samples</a>
+</nav>
+
+<!-- Workshop Materials -->
+<section id="workshop">
+<div class="container">
+    <h2>Workshop Materials</h2>
+    <p class="section-desc">Everything you need to run the 1-hour AI Creator Lab workshop for students ages 11-18.</p>
     <div class="cards">
         <div class="card">
             <div class="card-icon">📊</div>
             <h3>Workshop Deck</h3>
-            <p>21-slide PowerPoint presentation for the AI Creator Lab workshop (16:9, Chromebook-ready)</p>
-            <a href="AI-Creator-Lab-Deck.pptx" download>Download PPTX</a>
+            <p>21-slide PowerPoint presentation with Human-Centered Design Creator Process. Navy/gold/purple branding, 16:9, Chromebook-ready.</p>
+            <a href="AI-Creator-Lab-Deck.pptx" download class="btn">Download PPTX</a>
         </div>
         <div class="card">
             <div class="card-icon">📝</div>
             <h3>Creator Blueprint (Print)</h3>
-            <p>1-page landscape handout with the 5-step Creator Process. Print-friendly, B&W safe.</p>
-            <a href="Creator-Blueprint-Handout.pdf" download>Download PDF</a>
+            <p>1-page landscape handout with 5-step Creator Process. Dotted sketch grid, high contrast, B&W safe for classroom printing.</p>
+            <a href="Creator-Blueprint-Handout.pdf" download class="btn">Download PDF</a>
         </div>
         <div class="card">
             <div class="card-icon">💻</div>
             <h3>Creator Blueprint (Digital)</h3>
-            <p>Fillable PDF version for Chromebooks. Students type directly into form fields.</p>
-            <a href="Creator-Blueprint-Fillable.pdf" download>Download Fillable PDF</a>
+            <p>Fillable PDF version for Chromebooks. Students type directly into form fields and check their quest selection.</p>
+            <a href="Creator-Blueprint-Fillable.pdf" download class="btn">Download Fillable PDF</a>
         </div>
         <div class="card">
             <div class="card-icon">📄</div>
             <h3>One-Pager</h3>
-            <p>Partnership overview for CAAASA Leadership Academy and course platform vision.</p>
-            <a href="CAAASA-Leadership-Academy-OnePager.pdf" download>Download PDF</a>
+            <p>Partnership overview for CAAASA Leadership Academy — course platform vision, revenue model, and strategic roadmap.</p>
+            <a href="CAAASA-Leadership-Academy-OnePager.pdf" download class="btn">Download PDF</a>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Workshop Flow -->
+<section id="flow">
+<div class="container">
+    <h2>1-Hour Workshop Flow</h2>
+    <p class="section-desc">Tight, structured timing for the AI Creator Lab session.</p>
+    <table class="flow-table">
+        <thead>
+            <tr><th>Time</th><th>Slides</th><th>Activity</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>0-5 min</td><td>1-4</td><td>Hook: Welcome + "AI is everywhere"</td></tr>
+            <tr><td>5-8 min</td><td>5-6</td><td>Introduce HCD Creator Process</td></tr>
+            <tr><td>8-12 min</td><td>7-9</td><td>Walk through Vibe Check, Problem, Brainstorm</td></tr>
+            <tr><td>12-17 min</td><td>10</td><td><strong>Handout time</strong> &mdash; fill in Creator Blueprint</td></tr>
+            <tr><td>17-20 min</td><td>11-14</td><td>Choose Your Quest + tool walkthrough</td></tr>
+            <tr><td>20-22 min</td><td>15</td><td>Pro Prompt Tips</td></tr>
+            <tr><td>22-47 min</td><td>&mdash;</td><td><strong>BUILD IT</strong> &mdash; 25 min creation time</td></tr>
+            <tr><td>47-52 min</td><td>16-17</td><td>Post to Padlet + Gallery Walk</td></tr>
+            <tr><td>52-55 min</td><td>18</td><td>The Power Check (ethics)</td></tr>
+            <tr><td>55-58 min</td><td>19-20</td><td>Recap + resources</td></tr>
+            <tr><td>58-60 min</td><td>21</td><td>Thank you + keep creating</td></tr>
+        </tbody>
+    </table>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Video Production -->
+<section id="video">
+<div class="container">
+    <h2>Video Production Pipeline</h2>
+    <p class="section-desc">CAAASA School Site Administrator PLN promotional video &mdash; 2-minute cinematic piece.</p>
+
+    <div class="cards" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 700; color: #c9a227;">1</div>
+            <h3>Narration</h3>
+            <p>ElevenLabs AI<br><span class="badge badge-el">eleven_multilingual_v2</span></p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 700; color: #c9a227;">2</div>
+            <h3>Video Clips</h3>
+            <p>OpenAI Sora 2<br><span class="badge badge-sora">720p &bull; $0.10/sec</span></p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 700; color: #c9a227;">3</div>
+            <h3>Music</h3>
+            <p>Jamendo API<br><span class="badge badge-jam">royalty-free</span></p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 700; color: #c9a227;">4</div>
+            <h3>Assembly</h3>
+            <p>Remotion<br><span style="font-size: 0.7rem; color: #8b949e;">React-based render</span></p>
         </div>
     </div>
 
-    <div class="pdf-container">
-        <embed src="CAAASA-Leadership-Academy-OnePager.pdf" type="application/pdf">
+    <div class="callout">
+        <h4>Representation Rule</h4>
+        <p>All adult leaders, administrators, principals, and mentors in video prompts must be explicitly African-American men or women. Students and children can be diverse/multicultural. This is non-negotiable for every scene.</p>
     </div>
 
-    <p class="footer">CAAASA Leadership Academy x <a href="#">TRPEC</a></p>
+    <div class="cards" style="margin-top: 16px;">
+        <div class="card">
+            <div class="card-icon">🎬</div>
+            <h3>Production Review</h3>
+            <p>Full dark-mode review document with every scene, clip prompt, cost estimate, and approval section.</p>
+            <a href="video-production/production_review.html" class="btn">View Review</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">🐍</div>
+            <h3>Production Script</h3>
+            <p>Python orchestration script for Sora 2 + ElevenLabs + Jamendo. Supports --narration-only, --video-only, --clips flags.</p>
+            <a href="video-production/production_script.py" class="btn btn-outline">View Script</a>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Full Script -->
+<section id="script">
+<div class="container">
+    <h2>Full Video Script &mdash; 7 Scenes</h2>
+    <p class="section-desc">CAAASA School Site Administrator Professional Learning Network &mdash; 2-minute cinematic promotional video.</p>
+
+    <div class="scene">
+        <div class="scene-header">
+            <h3>Scene 1: Opening</h3>
+            <span class="scene-time">0:00 - 0:15</span>
+        </div>
+        <div class="scene-body">
+            <div class="visual-label">Visual</div>
+            <p class="visual-desc">Open with African-American site administrator alone in office late at night, looking tired but determined. Quick cuts showing the reality of site leadership: difficult conversations, crisis response, budget challenges. Transition to same administrator in vibrant meeting with other site leaders, laughing and problem-solving together.</p>
+            <div class="narration">
+                <div class="narration-label">Narration</div>
+                "2 AM. You're awake, thinking about tomorrow's difficult parent meeting. The budget crisis. The teacher you need to support. The initiative that's not working. You're searching for answers, but mostly? You're searching for someone who understands. Because site leadership isn't just hard&mdash;it's isolating. But what if it didn't have to be?"
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <h3>Scene 2: Who It's For</h3>
+            <span class="scene-time">0:15 - 0:30</span>
+        </div>
+        <div class="scene-body">
+            <div class="visual-label">Visual</div>
+            <p class="visual-desc">Show diverse African-American site administrators in their daily work: Elementary principal managing morning arrival. High school assistant principal handling discipline and student support. Middle school principal leading instructional improvement. Dean coordinating interventions and family engagement.</p>
+            <div class="narration">
+                <div class="narration-label">Narration</div>
+                "CAAASA's School Site Administrator Professional Learning Network is for every African-American site leader&mdash;whether you're in your first year feeling overwhelmed, or your fifteenth year needing fresh energy. Elementary, middle, or high school. Principal, assistant principal, or dean. If you're responsible for leading a school site, this network exists for you. Because you need more than professional development&mdash;you need a professional family."
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <h3>Scene 3: Why It Exists</h3>
+            <span class="scene-time">0:30 - 0:50</span>
+        </div>
+        <div class="scene-body">
+            <div class="visual-label">Visual</div>
+            <p class="visual-desc">Montage contrasting isolation vs. community: African-American administrator alone researching at midnight. Same person in network meeting getting instant solutions from peers. Show authentic moments: leaders being vulnerable about challenges, celebrating each other's wins, sharing resources.</p>
+            <div class="narration">
+                <div class="narration-label">Narration</div>
+                "The network exists because site leadership shouldn't be lonely. Yes, you have district support and your staff. But they don't sit in your chair. They don't face your impossible decisions. They don't wake up at 2 AM with your worries. The PLN connects you with people who do. People who've handled the teacher performance issue you're facing. Who've navigated the parent conflict that's consuming you. Who've survived the budget cut, the enrollment decline, the staff turnover. They're not consultants&mdash;they're colleagues. And they're ready to walk with you."
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <h3>Scene 4: What the Network Opens</h3>
+            <span class="scene-time">0:50 - 1:20</span>
+        </div>
+        <div class="scene-body">
+            <div class="visual-label">Visual</div>
+            <p class="visual-desc">Dynamic montage showing African-American leaders in network benefits: monthly learning sessions, small group problem-solving circles, resource sharing, site visits to each other's schools, mentoring relationships, celebrating promotions and achievements together.</p>
+            <div class="narration">
+                <div class="narration-label">Narration</div>
+                "The Professional Learning Network opens doors that transform your daily leadership and your career trajectory. You'll gain: Monthly learning sessions on what you actually need. A text thread of peers who respond within minutes. Ready-to-use tools and protocols tested at schools like yours. Mentors and thought partners who've been there. A safe space to be vulnerable without judgment. Support for your next career move. And honestly? The reminder that you're not alone, you're not failing, and you're exactly the leader your school needs."
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <h3>Scene 5: How the PLN Helps</h3>
+            <span class="scene-time">1:20 - 1:40</span>
+        </div>
+        <div class="scene-body">
+            <div class="visual-label">Visual</div>
+            <p class="visual-desc">Show specific examples: African-American admin faces crisis, texts network, gets immediate advice. Uses protocol shared in last month's meeting. Video call with mentor. Weekend network social event. Before/after: stressed admin alone to confident admin connected.</p>
+            <div class="narration">
+                <div class="narration-label">Narration</div>
+                "It's Tuesday morning, your dean just quit. You text the network&mdash;within 10 minutes, three members share how they handled similar situations. It's Thursday night, your PLN mentor walks you through a difficult evaluation meeting. It's Sunday, you attend the network's social gathering and remember why you lead. This isn't networking. This is survival. This is sustainability. This is sanity."
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <h3>Scene 6: The CAAASA Difference</h3>
+            <span class="scene-time">1:40 - 1:50</span>
+        </div>
+        <div class="scene-body">
+            <div class="visual-label">Visual</div>
+            <p class="visual-desc">Warm, authentic moments: African-American network members embracing at gatherings. Diverse ages and experience levels learning from each other. Laughter and genuine connection. Multi-generational mentorship.</p>
+            <div class="narration">
+                <div class="narration-label">Narration</div>
+                "This is the CAAASA difference. We're not just a professional organization; we're a family. For over 20 years, we've been creating spaces where African-American site administrators can be their full selves&mdash;brilliant and struggling, confident and uncertain, leading and learning."
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <h3>Scene 7: Call to Action</h3>
+            <span class="scene-time">1:50 - 2:00</span>
+        </div>
+        <div class="scene-body">
+            <div class="visual-label">Visual</div>
+            <p class="visual-desc">Transformation: African-American administrator who opened the video alone, now surrounded by supportive colleagues. Group photo of network members. End with administrator confidently handling a challenge, checking phone for encouraging message from PLN member.</p>
+            <div class="narration">
+                <div class="narration-label">Narration</div>
+                "You're already doing the hardest job in education. Stop doing it alone. Join CAAASA's School Site Administrator Professional Learning Network. Your people are waiting. Your support system is ready."
+            </div>
+            <p style="color: #c9a227; font-weight: bold; margin-top: 12px; font-style: italic;">"Because the best site administrators don't go it alone."</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Samples -->
+<section id="samples">
+<div class="container">
+    <h2>Production Samples</h2>
+    <p class="section-desc">Test outputs from the Sora 2 + ElevenLabs pipeline.</p>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">🎤</div>
+            <h3>Test Narration</h3>
+            <p>ElevenLabs sample &mdash; Morgan Freeman-inspired superintendent voice.</p>
+            <div class="audio-section">
+                <div class="audio-label">Scene 1 narration test</div>
+                <audio controls preload="metadata">
+                    <source src="video-production/test-outputs/test_narration.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎬</div>
+            <h3>Sora 2 Test Clip</h3>
+            <p>Sample video clip generated with cinematic amber/gold lighting style.</p>
+            <div class="video-section">
+                <video controls preload="metadata" poster="">
+                    <source src="video-production/test-outputs/sora2_test_clip.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎵</div>
+            <h3>Background Music</h3>
+            <p>Jamendo royalty-free track &mdash; "Spirit of Success" &mdash; warm, uplifting instrumental.</p>
+            <div class="audio-section">
+                <div class="audio-label">Background music candidate</div>
+                <audio controls preload="metadata">
+                    <source src="video-production/test-outputs/bg_music_spirit_of_success.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>CAAASA Leadership Academy &times; <a href="#">TRPEC</a> &bull; <a href="https://github.com/charlesmartinedd/caaasa-leadership-academy">GitHub Repo</a></p>
+    <p style="margin-top: 6px;">Built by <a href="https://alexandria-s-design.github.io/portfolio/">Alexandria's Design</a></p>
+</footer>
+
 </body>
 </html>
