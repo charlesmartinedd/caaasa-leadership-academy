@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAAASA Leadership Academy</title>
+    <title>CAAASA Leadership Academy — AI Creator Lab</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -13,42 +13,85 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 30px 20px;
         }
-        h1 {
-            color: #fff;
-            margin-bottom: 20px;
+        h1 { color: #fff; font-size: 2rem; margin-bottom: 6px; text-align: center; }
+        .subtitle { color: #c9a227; font-size: 1.1rem; margin-bottom: 30px; text-align: center; font-style: italic; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; width: 100%; max-width: 960px; margin-bottom: 30px; }
+        .card {
+            background: #243b5c;
+            border-radius: 10px;
+            padding: 24px 20px;
             text-align: center;
+            border: 2px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
         }
+        .card:hover { border-color: #c9a227; transform: translateY(-2px); }
+        .card-icon { font-size: 2.4rem; margin-bottom: 10px; }
+        .card h3 { color: #fff; font-size: 1rem; margin-bottom: 6px; }
+        .card p { color: #a0aec0; font-size: 0.85rem; margin-bottom: 16px; line-height: 1.4; }
+        .card a {
+            display: inline-block;
+            background: #c9a227;
+            color: #1a365d;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 8px 20px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .card a:hover { background: #e0b82e; }
         .pdf-container {
             width: 100%;
             max-width: 900px;
-            height: 85vh;
+            height: 70vh;
             background: #fff;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
-        embed {
-            width: 100%;
-            height: 100%;
-        }
-        .download-link {
-            margin-top: 20px;
-            color: #d69e2e;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .download-link:hover {
-            text-decoration: underline;
-        }
+        embed { width: 100%; height: 100%; }
+        .footer { color: #a0aec0; font-size: 0.8rem; margin-top: 24px; text-align: center; }
+        .footer a { color: #c9a227; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <h1>CAAASA Leadership Academy</h1>
+    <p class="subtitle">AI Creator Lab — Where Creativity Meets AI</p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Workshop Deck</h3>
+            <p>21-slide PowerPoint presentation for the AI Creator Lab workshop (16:9, Chromebook-ready)</p>
+            <a href="AI-Creator-Lab-Deck.pptx" download>Download PPTX</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">📝</div>
+            <h3>Creator Blueprint (Print)</h3>
+            <p>1-page landscape handout with the 5-step Creator Process. Print-friendly, B&W safe.</p>
+            <a href="Creator-Blueprint-Handout.pdf" download>Download PDF</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>Creator Blueprint (Digital)</h3>
+            <p>Fillable PDF version for Chromebooks. Students type directly into form fields.</p>
+            <a href="Creator-Blueprint-Fillable.pdf" download>Download Fillable PDF</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">📄</div>
+            <h3>One-Pager</h3>
+            <p>Partnership overview for CAAASA Leadership Academy and course platform vision.</p>
+            <a href="CAAASA-Leadership-Academy-OnePager.pdf" download>Download PDF</a>
+        </div>
+    </div>
+
     <div class="pdf-container">
         <embed src="CAAASA-Leadership-Academy-OnePager.pdf" type="application/pdf">
     </div>
-    <a href="CAAASA-Leadership-Academy-OnePager.pdf" download class="download-link">Download PDF</a>
+
+    <p class="footer">CAAASA Leadership Academy x <a href="#">TRPEC</a></p>
 </body>
 </html>
